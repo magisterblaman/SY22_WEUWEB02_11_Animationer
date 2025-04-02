@@ -1,3 +1,15 @@
+$animation-duration: 15s;
+$image-count: 3;
+$duration-per-image: $animation-duration / $image-count;
+
+@mixin scrolling-box($n, $url) {
+	.scrolling-box:nth-child(#{$n}) {
+		background-image: url(#{$url});
+	
+		animation-delay: $duration-per-image * $n * -1;
+	}
+}
+
 .scrolling-gallery {
 	position: relative;
 	width: 100%;
@@ -21,7 +33,7 @@
 	background-position: center center;
 
 	animation-name: scrolling;
-	animation-duration: 15s;
+	animation-duration: $animation-duration;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-fill-mode: backwards;
@@ -31,23 +43,27 @@
 	animation-play-state: paused;
 }
 
-.scrolling-box:nth-child(1) {
-	background-image: url('/media/bear.jpg');
+@include scrolling-box(1, '/media/bear.jpg');
+@include scrolling-box(2, '/media/cabbage.jpg');
+@include scrolling-box(3, '/media/glasses.jpg');
 
-	animation-delay: 0s;
-}
+// .scrolling-box:nth-child(1) {
+// 	background-image: url('/media/bear.jpg');
 
-.scrolling-box:nth-child(2) {
-	background-image: url('/media/cabbage.jpg');
+// 	animation-delay: 0s;
+// }
 
-	animation-delay: -5s;
-}
+// .scrolling-box:nth-child(2) {
+// 	background-image: url('/media/cabbage.jpg');
 
-.scrolling-box:nth-child(3) {
-	background-image: url('/media/glasses.jpg');
+// 	animation-delay: -5s;
+// }
 
-	animation-delay: -10s;
-}
+// .scrolling-box:nth-child(3) {
+// 	background-image: url('/media/glasses.jpg');
+
+// 	animation-delay: -10s;
+// }
 
 @keyframes scrolling {
 	0% {
