@@ -1,0 +1,25 @@
+.floats > * {
+	animation-name: float-in;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	animation-play-state: paused;
+}
+
+.floats > .floated {
+	animation-play-state: running;
+}
+
+@keyframes float-in {
+	0% {
+		opacity: 0;
+
+		transform: translateY(2rem);
+	}
+
+	100% {
+		opacity: 1;
+
+		transform: none;
+	}
+}
