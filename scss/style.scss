@@ -1,0 +1,55 @@
+#box {
+	position: absolute;
+	top: 5rem;
+	left: 20rem;
+
+	width: 10rem;
+	height: 10rem;
+
+	background-color: green;
+
+	animation-name: box-move;
+	animation-delay: 3s;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0,1.53,1,-0.3);
+
+	animation-play-state: paused;
+}
+
+#box2 {
+	position: absolute;
+
+	width: 7.5rem;
+	height: 5rem;
+	top: 0;
+	left: 0;
+
+	animation: box-move 10s infinite both ease;
+	// animation-name: box-move;
+	// animation-delay: 0;
+	// animation-duration: 10s;
+	// animation-iteration-count: infinite;
+	// animation-fill-mode: both;
+	// animation-timing-function: ease;
+
+	animation-play-state: running;
+}
+
+@keyframes box-move {
+	0% {
+		background-color: aquamarine;
+		top: 0;
+	}
+
+	67% {
+		background-color: yellow;
+		top: 20rem;
+	}
+
+	100% {
+		background-color: aquamarine;
+		top: 0;
+	}
+}

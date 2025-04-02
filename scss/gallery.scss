@@ -1,0 +1,64 @@
+.scrolling-gallery {
+	position: relative;
+	width: 100%;
+	height: 35rem;
+
+	background-color: brown;
+
+	overflow: hidden;
+}
+
+.scrolling-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	// background-color: darkviolet;
+	background-size: cover;
+	background-position: center center;
+
+	animation-name: scrolling;
+	animation-duration: 15s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: backwards;
+}
+
+.scrolling-gallery.paused > .scrolling-box {
+	animation-play-state: paused;
+}
+
+.scrolling-box:nth-child(1) {
+	background-image: url('/media/bear.jpg');
+
+	animation-delay: 0s;
+}
+
+.scrolling-box:nth-child(2) {
+	background-image: url('/media/cabbage.jpg');
+
+	animation-delay: -5s;
+}
+
+.scrolling-box:nth-child(3) {
+	background-image: url('/media/glasses.jpg');
+
+	animation-delay: -10s;
+}
+
+@keyframes scrolling {
+	0% {
+		left: -100%;
+	}
+
+	66.667% {
+		left: 100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
