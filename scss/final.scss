@@ -1,0 +1,16 @@
+body {
+	margin: 0;
+	height: 100vh;
+
+	background-color: black;
+
+	overflow: hidden;
+}
+
+#box {
+	position: absolute;
+	width: 10rem;
+	height: 10rem;
+
+	background-color: #abcdef;
+}
