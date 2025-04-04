@@ -6,6 +6,8 @@ let startButton = document.getElementById('start-button');
 let pauseButton = document.getElementById('pause-button');
 let resetButton = document.getElementById('reset-button');
 
+let progressBar = document.getElementById('progress-bar');
+
 let hours = 0;
 let minutes = 0;
 let seconds = 0;
@@ -18,7 +20,7 @@ let stopwatchIntervalId = -1;
 
 function startStopwatch(event) {
 	if (stopwatchIntervalId === -1) {
-		stopwatchIntervalId = setInterval(secondPassed, 50);
+		stopwatchIntervalId = setInterval(secondPassed, 500);
 	}
 }
 
@@ -65,4 +67,7 @@ function updateElements() {
 	} else {
 		secondsElement.innerText = seconds;
 	}
+
+	let progress = seconds / 59 * 100;
+	progressBar.style.width = progress + '%';
 }

@@ -1,0 +1,14 @@
+#progress-bar-container {
+	width: 20rem;
+	height: 0.5rem;
+
+	background-color: azure;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#progress-bar {
+	height: 100%;
+	width: 0%;
+
+	background-color: aqua;
+}
